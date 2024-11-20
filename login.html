@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="png" href="images/icon/favicon.png">
+    <title>Login & SignUp</title>
+    <link rel="stylesheet" href="loginStyle.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- JavaScript to show an alert after form submission -->
+    <script>
+    $(document).ready(function(){
+        $("form").submit(function(){
+            alert("Great Job!");
+        });
+    });
+    </script>
+</head>
+<body>
+    <div class="form-box">
+        <div class="button-box">
+            <div id="btn"></div>
+            <button type="button" class="toggle-btn" id="log" onclick="login()">Log In</button>
+            <button type="button" class="toggle-btn" id="reg" onclick="register()">Register</button>
+        </div>
+
+        <div class="social-icons">
+            <img src="images/icon/fb2.png" alt="Facebook">
+            <img src="images/icon/insta2.png" alt="Instagram">
+            <img src="images/icon/tt2.png" alt="Twitter">
+        </div>
+
+        <!-- Login Form -->
+        <form id="login" class="input-group" method="POST" action="process.php">
+            <div class="inp">
+                <img src="images/icon/user.png" alt="User">
+                <input type="text" name="username" id="email" class="input-field" placeholder="Username or Phone Number" required>
+            </div>
+            <div class="inp">
+                <img src="images/icon/password.png" alt="Password">
+                <input type="password" name="password" id="password" class="input-field" placeholder="Password" required>
+            </div>
+            <div class="remember-me">
+                <input type="checkbox" class="check-box" name="remember_me"> Remember Password
+            </div>
+            <button type="submit" name="action" value="login" class="submit-btn">Log In</button>
+        </form>
+
+        <div class="other" id="other">
+            <div class="instead">
+                <h3>or</h3>
+            </div>
+            <button class="connect" onclick="google()">
+                <img src="images/icon/google.png" alt="Google"><span>Sign in with Google</span>
+            </button>
+        </div>
+
+        <!-- Registration Form -->
+        <form id="register" class="input-group" method="POST" action="process.php">
+            <input type="text" name="name" class="input-field" placeholder="Full Name" required>
+            <input type="email" name="email" class="input-field" placeholder="Email Address" required>
+            <input type="password" name="password" class="input-field" placeholder="Create Password" required>
+            <input type="password" name="confirm_password" class="input-field" placeholder="Confirm Password" required>
+            <div class="terms">
+                <input type="checkbox" class="check-box" id="chkAgree" onclick="goFurther()">
+                <label for="chkAgree">I agree to the <a href="LICENSE.txt" target="_blank">Terms & Conditions</a></label>
+            </div>
+            <button type="submit" name="action" value="register" id="btnSubmit" class="submit-btn reg-btn">Register</button>
+        </form>
+    </div>
+
+    <script type="text/javascript" src="script.js"></script>
+</body>
+</html>

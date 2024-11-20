@@ -1,0 +1,26 @@
+       Educa License
+       Copyright (c) 2024 Ajay Singh, Jyoti Devi
+
+       Permission is hereby granted, free of charge, to any student or learner obtaining a copy of Educa software, templates, or associated documentation files (the "Software"), to use, study, modify, and share the Software for
+       educational, personal, or non-commercial purposes, subject to the following conditions:
+
+      Usage
+       This license allows the creation, modification, and deployment of websites using the Educa Software for learning, practice, or portfolio purposes.
+
+       Attribution
+       The above copyright notice and this permission notice must be included in all copies or substantial portions of the Software.
+       Clear credit must be given to the original authors, Ajay Singh and Jyoti Devi, in any public-facing usage of the Software (e.g., in the website footer or documentation).
+
+       Restrictions
+      Commercial use, sale, or sublicensing of the Educa Software or its derivatives is strictly prohibited without prior written consent from the authors.
+         
+       Warranty Disclaimer
+       THE SOFTWARE IS PROVIDED "AS IS," WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND 
+       NONINFRINGEMENT.IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY ARISING OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+      OTHER DEALINGS IN THE SOFTWARE.
+
+      Updates and Contributions
+      Students are encouraged to share improvements or updates made to the Educa Software with the authors to foster learning and collaboration.
+      By using the Educa Software, you agree to the terms of this license.
+
+
