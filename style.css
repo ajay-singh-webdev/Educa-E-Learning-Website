@@ -84,11 +84,13 @@ nav ul li a.active {
 }
 
 .head-container {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	padding: 100px 30px 30px;
-	flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 50px 10%;
+  min-height: 90vh;
+  background-color: #fff;
 }
 
 .quote, .svg-image {
