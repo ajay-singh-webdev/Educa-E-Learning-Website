@@ -10,6 +10,66 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<script type="text/javascript" src="script.js"></script>
 	<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+	<style>
+		/* Make images responsive */
+		img {
+			max-width: 100%;
+			height: auto;
+		}
+
+		/* Responsive nav bar */
+		nav ul {
+			display: flex;
+			gap: 15px;
+			list-style: none;
+		}
+
+		@media (max-width: 768px) {
+			nav ul {
+				display: none;
+				flex-direction: column;
+				background-color: #fff;
+				position: absolute;
+				top: 60px;
+				left: 0;
+				right: 0;
+				z-index: 1000;
+			}
+
+			nav ul.active {
+				display: flex;
+			}
+
+			.menu {
+				display: block;
+				cursor: pointer;
+			}
+
+			.head-container {
+				flex-direction: column;
+				text-align: center;
+			}
+
+			.quote, .svg-image {
+				width: 100%;
+			}
+		}
+
+		@media (min-width: 769px) {
+			.menu {
+				display: none;
+			}
+		}
+
+		.head-container {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: 20px;
+			padding: 20px;
+			flex-wrap: wrap;
+		}
+	</style>
 	<script>
 		$(window).on('scroll', function(){
   			if($(window).scrollTop()){
