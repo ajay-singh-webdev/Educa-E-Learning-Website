@@ -8,51 +8,6 @@
 // 	document.getElementById("myBar").style.width = scrolled + "%"; 
 // }
 
-// Toggle mobile menu
-const menuIcon = document.querySelector('.menu');
-const sideMenu = document.querySelector('.side-menu');
-const closeBtn = document.querySelector('.side-menu .close img');
-
-if (menuIcon && sideMenu && closeBtn) {
-  menuIcon.addEventListener('click', () => {
-    sideMenu.style.transform = 'translateX(0)';
-    document.body.classList.add('menu-open');
-  });
-
-  closeBtn.addEventListener('click', () => {
-    sideMenu.style.transform = 'translateX(-100%)';
-    document.body.classList.remove('menu-open');
-  });
-}
-
-// Highlight active nav link
-const navLinks = document.querySelectorAll('nav ul li a');
-navLinks.forEach(link => {
-  link.addEventListener('click', function () {
-    navLinks.forEach(l => l.classList.remove('active'));
-    this.classList.add('active');
-  });
-});
-
-// Scroll-based animations (for side-text, side-image etc.)
-function revealOnScroll() {
-  const animatedItems = document.querySelectorAll('.side-text, .side-image');
-  const windowHeight = window.innerHeight;
-
-  animatedItems.forEach(item => {
-    const itemTop = item.getBoundingClientRect().top;
-    const visible = itemTop < windowHeight - 100;
-
-    if (visible) {
-      item.classList.add(item.classList.contains('side-text') ? 'side-text-appear' : 'sideImage-appear');
-    }
-  });
-}
-
-window.addEventListener('scroll', revealOnScroll);
-document.addEventListener('DOMContentLoaded', revealOnScroll);
-
-
 function scrollAppear() {
   var introText = document.querySelector('.side-text');
   var sideImage = document.querySelector('.sideImage');
