@@ -57,7 +57,23 @@ body {
 	animation: fadeInRight 1s ease-in-out forwards;
 }
 
-/* ========== HEADER / NAVIGATION ========== */
+/* SIDEMENU */
+.side-menu {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 250px;
+	height: 100%;
+	background: rgba(182,33,90,0.99);
+	transform: translateX(-100%);
+	transition: transform 0.4s ease;
+	z-index: 9999;
+}
+.side-menu.open {
+	transform: translateX(0);
+}
+
+/* HEADER NAVIGATION */
 header {
 	height: 90vh;
 }
@@ -129,61 +145,77 @@ nav ul li a:hover, .active {
 }
 
 /* Logo */
-.logo img{
+.logo img {
 	width: 120px;
 	cursor: pointer;
 	transition: all 1s;
 }
 
-/* ========== HERO ========== */
-.head-container {
-	margin-top: 350px;
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-	justify-content: space-around;
+/* ========== RESPONSIVE FIXES ========== */
+@media screen and (max-width: 960px) {
+	nav ul, .srch, .get-started {
+		display: none;
+	}
+	.menu {
+		display: block;
+	}
+	nav {
+		padding-bottom: 20px;
+		border-bottom: 1px solid #0005;
+	}
+	.logo {
+		margin: 0 auto;
+		display: block;
+	}
+	.quote p {
+		font-size: 30px;
+		text-align: center;
+	}
+	.svg-image img {
+		width: 90%;
+	}
+	.head-container {
+		margin-top: 200px;
+	}
 }
-.quote {
-	width: 700px;
-	transform: translateY(-60px);
+@media screen and (max-width: 700px) {
+	footer .btn {
+		width: 100%;
+		margin-top: 20px;
+	}
 }
-.quote h5 {
-	margin-top: 50px;
-	color: #0009;
-	line-height: 20px;
-}
-.quote p {
-	font-size: 50px;
-	color: #2e2e2e;
-}
-.quote .play {
-	margin-top: 20px;
-	display: flex;
-	align-items: center;
-}
-.quote .play img {
-	width: 45px;
-	cursor: pointer;
-	filter: drop-shadow(0 0 10px #0002);
-}
-.quote .play span a{
-	margin-left: 10px;
-	font-size: 20px;
-	font-weight: 900;
-	color: rgba(0, 0, 0, 0.8);
-	cursor: pointer;
-}
-.svg-image img{
-	width: 670px;
-	filter: drop-shadow(0 30px 10px rgba(0,0,0,0.2));
+@media screen and (max-width: 1000px) {
+	.feedbox form input, .feedbox form .fname {
+		width: 100%;
+	}
 }
 
-/* ========== SECTION BASE ========== */
-#about_section, #portfolio_section, #team_section, #services_section, #contactus_section, #feedback_section, #review_section {
-	padding: 80px 0;
+/* SECTION ENTRY ANIMATION */
+#about_section,
+#portfolio_section,
+#team_section,
+#services_section,
+#contactus_section {
 	opacity: 0;
-	animation: fadeInUp 1.5s ease forwards;
-	animation-delay: 0.3s;
+	transform: translateY(40px);
+	transition: all 0.6s ease-out;
+}
+.visible {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+/*Common things in all sections*/
+#about_section, #portfolio_section, #team_section, #services_section, #contactus_section {
+	font-family: 'Open Sans', sans-serif;
+	color: #2E3D49;
+	position: relative;
+}
+.diffSection {
+	width: 100%;
+	/*position: relative;*/
+	justify-content: center;
+	align-items: center;
 }
 .diffSection .content {
 	margin: 10px;
@@ -192,20 +224,67 @@ nav ul li a:hover, .active {
 	font-size: 1.1em;
 }
 
-/* ========== SECTION TITLE ========== */
-.title, .title2 span {
+/*PORTFOLIO*/
+.extra {
+	width: 100%;
+}
+.extra p {
+	padding: 30px;
+	padding-bottom: 150px;
+	font-size: 50px;
+	text-align: center;
+	color: #fff;
+	background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.7)),url("images/extra/b1.jpg");
+	background-size: cover;
+	background-attachment: fixed;
+	font-family: cursive;
+	z-index: -9;
+}
+.smbox {
+	display: flex;
+	flex-wrap: wrap;
+	transform: translateY(-100px);
+	justify-content: center;
+}
+.smbox span {
+	margin: 1%;
+	background: #fff;
+	box-shadow: inset 0px 0px 25px rgba(0,0,0,0.2),
+						0 0 40px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	padding: 30px 50px;
+	cursor: pointer;
+}
+.smbox span:hover {
+	transform: scale(1.3);
+	transition: .5s ease;
+}
+.smbox .data {
+	font-size: 80px;
+	color: #FA6146;	
+}
+.smbox .det {
+	font-size: 20px;
+	color: #272529;
+	font-family: cursive;
+}
+
+/*Title*/
+.title {
+	 margin-top: 0px; 
+	font-family: 'Open Sans', sans-serif;
 	font-size: 30px;
 	text-align: center;
 	color: #2E3D49;
-	font-family: 'Open Sans', sans-serif;
-	font-weight: 700;
 }
 
-/* ========== ABOUT ========== */
+/*ABOUT*/
 .about-content {
-	display: flex;
-	flex-wrap: wrap;
+	width: 100%;
+	position: relative;
 	justify-content: center;
+	flex-wrap: wrap;
+	display: flex;
 	align-items: center;
 }
 .about-content .side-text {
@@ -216,55 +295,72 @@ nav ul li a:hover, .active {
 	border-radius: 5px;
 	text-align: justify;
 	line-height: 22px;
-	animation: fadeInLeft 1s ease-in-out forwards;
+	opacity: 0;
+	transform: translateX(-100px);
+	transition: 1s ease-in-out;
 }
-.about-content .side-text h2, .about-content .side-text p {
+.about-content .side-text-appear {
+	opacity: 1;
+	transform: translateX(0px);
+}
+.about-content .side-text h2 {
+	padding: 10px;
+}
+.about-content .side-text p {
 	padding: 10px;
 }
 .about-content .side-image img {
 	width: 90%;
 	border-radius: 5px;
-	animation: fadeInRight 1s ease-in-out forwards;
+}
+.sideImage {
+	transform: translateX(100px);
+	opacity: 0;
+	transition: .8s ease-in-out;
+}
+.sideImage-appear {
+	opacity: 1;
+	transform: translateX(0px);
 }
 
-/* ========== SERVICES ========== */
-.service-swipe {
-	display: flex;
+/*POPULAR SUBJECTS*/
+.cbox {
+	position: relative;
+	width: 100%;
+	display: inline-flex;
 	flex-wrap: wrap;
 	justify-content: center;
-	align-items: center;
-	background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.7)),url("images/extra/b3.jpg");
-	background-size: cover;
-	background-attachment: fixed;
 }
-.service-swipe .s-card {
-	display: flex;
-	justify-content: space-around;
-	padding: 10px;
-	align-items: center;
-	text-align: center;
-	width: 350px;
-	height: 200px;
-	box-shadow: inset 0 0 20px rgba(255,255,255,0.05),
-					0 0 50px rgba(0,0,0,0.8);
-	border-radius: 5px;
+.cbox .det {
+	width: 250px;
+	height: 80px;
+	margin: 10px;
+	background: #fff;
 	cursor: pointer;
-	transition: .5s;
-	margin: 40px 10px;
 }
-.service-swipe .s-card:hover {
-	box-shadow: 0 0 50px rgba(255,255,255,0.8);
-	transform: translateY(-10px);
+.cbox .det a{
+	justify-content: space-around;
+	width: 250px;
+	padding: 28px;
+	border-radius: 10px;
+	border: 1px solid #FA4B37;
+	font-size: 15px;
+	color: #272529;
+	font-family: cursive;
+	text-decoration: none;
 }
-.service-swipe .s-card img {
-	width: 100px;
+.cbox .det a:hover {
+	background: linear-gradient(to right, #FA4B37, #DF2771);
+	color: white;
 }
-.service-swipe .s-card p {
-	color: #f2f2f2;
-	font-size: 1.2em;
+.cbox .det a:hover img{
+	filter: brightness(100);
+}
+.cbox img {
+	width: 20px;
+	margin-right: 20px;
 }
 
-/* ========== TEAM, CONTACT, FEEDBACK, REVIEW ========== */
 /*TEAM SECTION*/
 .totalcard {
 	width: 100%;
@@ -635,8 +731,17 @@ form textarea {
 	color: #fff;
 	font-size: 12px;
 	cursor: pointer;
-
 }
+
+/*SCROLLING TEXT*/
+.marqu {
+	text-align: center;
+	justify-content: center;
+	color: #fff;
+	font-size: 20px;
+	padding: 10px;
+}
+
 /*FOOTER*/
 footer {
 	color: #E5E8EF;
@@ -713,9 +818,28 @@ footer .btn:hover {
 	opacity: .7;
 }
 
-/* ========== RESPONSIVE ========== */
+/*PROPERTIES FOR MAKING WEBSITE RESPONSIVE*/
 @media screen and (max-width: 960px) {
-	nav ul, .srch, .get-started {
+	.footer-container {
+		max-width: 600px;
+	}
+	.right-col {
+		width: 100%;
+		margin-bottom: 60px;
+	}
+	.left-col {
+		width: 100%;
+		text-align: center;
+	}
+	.social-media {
+		display: flex;
+		justify-content: center;
+	}
+	.logo {
+		transition: 1s;
+		margin-left: 30%;
+	}
+	nav ul, .srch, .get-started{
 		display: none;
 	}
 	.menu {
@@ -724,23 +848,21 @@ footer .btn:hover {
 	nav {
 		padding-bottom: 20px;
 		border-bottom: 1px solid #0005;
+		/* position: fixed; */
+		/* top: 0; */
+	}
+	.quote p, .quote h5, .play {
+		justify-content: center;
+		text-align: center;
 	}
 	.quote p {
 		font-size: 30px;
-		text-align: center;
 	}
-	.svg-image img {
+	.service-container .right-side img {
 		width: 90%;
 	}
-}
-@media screen and (max-width: 700px) {
-	footer .btn {
-		width: 100%;
-		margin-top: 20px;
+	.title {
+		margin-top: 0px;
 	}
-}
-@media screen and (max-width: 1000px) {
-	.feedbox form input, .feedbox form .fname {
-		width: 100%;
-	}
+	
 }
